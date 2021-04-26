@@ -25,7 +25,6 @@ class LaraDataset(torch.utils.data.Dataset):
     # 生成Lara数据集
     def __init__(self, train_csv, user_emb_matrix):
         self.train_csv = pd.read_csv(train_csv, header=None)
-        # 使用dataset时，最好先进行loc定位之后，在getItem中直接查找，查找时间会下降3个数量级
         self.user = self.train_csv.loc[:, 0]
         self.item = self.train_csv.loc[:, 1]
         self.attr = self.train_csv.loc[:, 2]
