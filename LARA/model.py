@@ -9,14 +9,14 @@ import pandas as pd
 import numpy as np
 
 parser = argparse.ArgumentParser("Lara")
-parser.add_argument('--alpha', type=float, default=0, help='location of the datasets corpus')
-parser.add_argument('--attr_num', type=int, default=18, help='location of the datasets corpus')
-parser.add_argument('--attr_dim', type=int, default=5, help='batch size')
-parser.add_argument('--batch_size', type=int, default=1024, help='init learning rate')
-parser.add_argument('--hidden_dim', type=int, default=100, help='momentum')
-parser.add_argument('--user_emb_dim', type=int, default=18, help='weight decay')
-parser.add_argument('--lr', type=float, default=0.0001, help='weight decay')
-parser.add_argument('--epochs', type=int, default=200, help='weight decay')
+parser.add_argument('--alpha', type=float, default=0, help='Adam optimer parameter')
+parser.add_argument('--attr_num', type=int, default=18, help='the num of attributes')
+parser.add_argument('--attr_dim', type=int, default=5, help='the dim of attributes')
+parser.add_argument('--batch_size', type=int, default=1024, help='batch size')
+parser.add_argument('--hidden_dim', type=int, default=100, help='the dim of hidden')
+parser.add_argument('--user_emb_dim', type=int, default=18, help='the dim of user embedding')
+parser.add_argument('--lr', type=float, default=0.0001, help='learning rate')
+parser.add_argument('--epochs', type=int, default=200, help='epochs')
 args = parser.parse_args()
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
